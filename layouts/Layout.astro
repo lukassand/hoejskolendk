@@ -1,0 +1,65 @@
+---
+import Button from "../src/pages/components/Button.astro";
+import Burger from "../src/pages/components/Burger.astro";
+import "../src/pages/css/header.css";
+import "../src/pages/css/main.css";
+import "../src/pages/css/footer.css";
+---
+
+
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<header>
+            <section class="socialmedia">
+            <a href=""><img src="../public/imgs/facebook.svg" alt="facebook"></a>
+            <a href=""><img src="../public/imgs/instagram.svg" alt="instagram"></a>
+            <a href=""><img src="../public/imgs/tiktok.svg" alt="tiktok"></a>
+             <a href=""><img src="../public/imgs/youtube-solid.svg" alt="youtube"></a>
+            </section>
+            <p>4,8/5 stjerner på TrustPilot</p>
+            <p>Medlem af Rejsegarantifonden</p>
+            <p>Rejser for unge siden 2010</p>
+            <a class="help-link" href="">Brug for hjælp?</a>
+		</header>
+		<nav class = "linksplus">
+            <a class = "logo" href="">HØJSKOLENDK</a>
+            <section class = "links">
+		    <a href="">Rejsekalender</a>
+		    <a href="">Højskoleophold</a>
+		    <a href="">Sommerhøjskole</a>
+		    <a href="">Priser</a>
+		    <a href="">Om os</a>
+		    <a href="">Kontakt os</a>
+            </section>
+			<div class="nav-links">
+				<a href="">Rejsekalender</a>
+				<a href="">Højskoleophold</a>
+				<a href="">Sommerhøjskole</a>
+				<a href="">Priser</a>
+				<a href="">Om os</a>
+				<a href="">Kontakt os</a>
+                <a href="">Bestil ophold</a>
+			</div>
+			<Button title="Bestil ophold" variant="orange" href="/" />
+			<Burger client:load />
+		</nav>
+		<slot />
+
+    <footer>
+        <p>     </p>
+    </footer>
+	</body>
+</html>

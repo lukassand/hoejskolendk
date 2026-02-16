@@ -1,0 +1,158 @@
+header {
+  background-color: #ebbb99;
+  padding: 20px;
+}
+
+header {
+    font-weight: bold;
+    font-family: 'Host Grotesk', sans-serif;
+    font-size: small;
+    display: flex;
+  justify-content: center;
+  align-items: center;    
+  gap: 30px;
+}
+
+header a{
+    margin-left: auto;
+    margin-right: 30px;
+}
+
+.socialmedia{
+    margin-right: auto;
+    margin-left: 30px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-family: 'Host Grotesk', sans-serif;
+}
+
+.linksplus{
+  background-color: #ffffff;
+   display: flex;
+  justify-content: center;
+  align-items: center;    
+  padding: 30px;
+}
+.linksplus{ font-family: 'Host Grotesk', sans-serif; }
+
+/* ensure absolute-positioned nav-links are positioned relative to this container */
+.linksplus{ position: relative; }
+.linksplus button{
+    margin-left: auto;
+}
+
+.linksplus .logo{
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: auto; 
+}
+
+.links{
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Mobile nav links (hidden by default, shown when .expanded) */
+.nav-links{
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 12px 20px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+  z-index: 40;
+}
+.nav-links a{
+  display: block;
+  padding: 8px 0;
+  text-align: center;
+  font-family: 'Host Grotesk', sans-serif;
+}
+
+/* allow the expanded state to show regardless of other rules */
+.nav-links.expanded{
+  display: flex !important;
+}
+
+.burger{
+  display: none;
+}
+
+.help-link{
+  text-decoration: underline;
+}
+
+
+
+@media (max-width: 767px) {
+  /* hide non-essential header text on small screens */
+  header p, .help-link{
+    display: none;
+  }
+
+  /* keep header visible but arrange items in a single centered row */
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: nowrap;
+    padding: 12px;
+  }
+
+  /* social icons inline and centered */
+  .socialmedia{
+    margin: 0;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  /* remove auto margins that push items apart on desktop */
+  header a{
+    margin: 0;
+  }
+
+  /* ensure nav/logo area doesn't force wrapping */
+  .linksplus .logo{
+    margin-right: 0;
+  }
+  /* hide desktop horizontal links on mobile; burger will show nav-links */
+  .links{
+    display: none;
+  }
+
+  /* show `.nav-links` when hamburger toggles `.expanded` */
+  .nav-links.expanded{
+    display: flex;
+  }
+
+.links{
+  display: none;
+}
+
+.linksplus button.orange{
+  display: none;
+}
+
+.linksplus .logo{
+  margin-right: auto
+}
+
+.burger{
+  display: block;
+
+}
+
+}

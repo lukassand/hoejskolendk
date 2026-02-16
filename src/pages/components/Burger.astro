@@ -1,0 +1,13 @@
+---
+// src/components/Burger.astro
+---
+<button class="burger" aria-label="Menu" aria-expanded="false" onclick="(function(el){while(el && !el.classList.contains('linksplus')) el = el.parentElement; if(el){var nav = el.querySelector('.nav-links'); if(nav) nav.classList.toggle('expanded');}})(this)">
+  <span class="line"></span>
+  <span class="line"></span>
+  <span class="line"></span>
+</button>
+
+<style>
+  .burger { padding: 10px; cursor: pointer; background: transparent; border: none; }
+  .burger .line { display: block; width: 25px; height: 3px; margin: 5px; background-color: #333; }
+</style>

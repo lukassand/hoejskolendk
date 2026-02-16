@@ -1,17 +1,65 @@
 ---
+import Layout from "../../layouts/Layout.astro";
+import Button from "./components/Button.astro";
+import Card from "./components/Card.astro";
+const cards = [
+  {
+    title: "Maldiverne, Sri Lanka, Bali, Gili Islands, Japan, Australien",
+	image:"/imgs/1.jpeg",
+    subtitle: "Se afgange",
+  },
+  {
+    title: "Brasilien, Colombia, Costa Rica, Mexico",
+	image:"/imgs/6.jpeg",
+    badge: "2 drengepladser tilbage",
+  },
+  {
+    title: "Australien, New Zealand, Vietnam, Bali, Gili Islands, Lombok",
+	image:"/imgs/2.jpeg",
+  },
+  {
+    title: "Hawaii, Australien, Japan, Bali, Gili Islands",
+	image:"/imgs/3.jpeg",
+    badge: "4 pladser tilbage",
+  },
+  {
+    title: "Maldiverne, Sri Lanka, Bali, Gili Islands",
+	image:"/imgs/5.jpeg"
+  },
+];
 
+import "./css/header.css";
+import "./css/main.css";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+
+<Layout>
+<section class="forside1">
+	<h1>Dit højskoleeventyr <br>starter her</h1>
+	<h2>HØJSKOLENDK er en dansk højskole for unge i alderen 18-26 år.<br>
+		Vi brænder for oplevelser, fællesskabet og det gode eventyr.
+	</h2>
+	
+	<section class="forsidebuttons">
+	<Button title="Se rejsekalender" variant="orange" href="/"/>
+	<Button title="Infomøder" variant="infomøder" href="/" />
+	</section>
+</section>
+
+<section class="forside2">
+	<h1>Vælg dit eventyr</h1>
+	<h2>HØJSKOLENDK er en dansk højskole for unge i alderen 18-26 år.<br>
+		Vi brænder for oplevelser, fællesskabet og det gode eventyr.</h2>
+</section>
+
+<section class="grid">
+  {cards.map((card) => (
+    <Card {...card} />
+  ))}
+</section>
+
+<article class="SeAlleRejser">
+<Button title="Se alle rejser" variant="orange" href="/"/>
+</article>
+
+</Layout>

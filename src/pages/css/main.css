@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.forsidebuttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+    padding-bottom: 200px;
+}
+
+.forside1 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5)), url("./public/imgs/forside1.jpeg");
+    background-size: cover;
+    background-position: center;
+}
+
+.forside1 h1{
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 20px;
+    font-size: 60px;
+    font-weight: 900;
+    color: white;
+    font-family: "Host Grotesk", sans-serif;
+    text-shadow: 2px 2px 10px black;
+    
+}
+
+.forside1 h2{
+    text-align: center;
+    padding: 20px;
+    font-size: large;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     text-shadow: 2px 2px 10px black;
+}
+
+.forside2 {
+    background-color: white;
+}
+
+.forside2 h1{
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 5px;
+    font-size: 40px;
+}
+
+.forside2 h2{
+    text-align: center;
+    padding: 10px;
+    font-size: medium;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  padding: 40px;
+}
+
+.SeAlleRejser{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0px;
+}

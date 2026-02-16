@@ -1,0 +1,86 @@
+---
+interface Props {
+  title: string;
+  image: string;        // 👈 new prop
+  duration?: string;
+  badge?: string;
+  subtitle?: string;
+}
+
+const { title, image, duration = "90 dage", badge, subtitle } = Astro.props;
+---
+
+<div 
+  class="card"
+  style={`background-image: url(${image});`}
+>
+  <span class="duration">{duration}</span>
+
+  {badge && <span class="badge">{badge}</span>}
+
+  <div class="content">
+    <h3>{title}</h3>
+    {subtitle && <p>{subtitle}</p>}
+  </div>
+</div>
+
+<style>
+.card {
+  position: relative;
+  border-radius: 16px;
+  padding: 24px;
+  min-height: 320px;
+
+  display: flex;
+  align-items: flex-end;
+
+  color: white;
+  overflow: hidden;
+  cursor: pointer;
+
+  /* 👇 background image styling */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Dark overlay so text is readable */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
+  z-index: 0;
+}
+
+.duration,
+.badge,
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.duration {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: #d35400;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.badge {
+  position: absolute;
+  top: 200px;
+  left: 24px;
+  background: #2c7da0;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.content h3 {
+  margin: 0;
+  font-size: 24px;
+}
+</style>

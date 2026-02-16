@@ -1,0 +1,23 @@
+---
+const { title, variant, href } = Astro.props;
+---
+
+<button class={variant} onclick={href ? `window.location.href = '${href}'` : undefined}>{title}</button>
+
+<style>
+	button {
+		padding: 20px;
+		border: none;
+		border-radius: 5px;
+		font-weight: bold;
+        cursor:pointer;
+	}
+	.orange {
+		background-color: #ce5501;
+		color: white;
+	}
+	.infomøder {
+		background-color: white;
+		color: black;
+	}
+</style>
