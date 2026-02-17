@@ -122,3 +122,11 @@ select {
     gap: 5px;
 }
 
+
+
+@media (max-width: 767px) {
+
+.info2{
+    padding: 50px;
+
+}}
