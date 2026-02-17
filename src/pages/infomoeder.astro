@@ -1,12 +1,141 @@
 ---
+import { object } from "astro:schema";
 import Layout from "../../layouts/Layout.astro";
 import Button from "./components/Button.astro";
 import "./css/header.css";
 import "./css/main.css";
+import "./css/footer.css";
+import Burger from "./components/Burger.astro";
+import "./css/info.css";
+
+const destinations = [
+  "Maldiverne, Sri Lanka, Bali, Gili Islands, Japan og Australien"  ,
+  "Costa Rica, Mexico og Colombia",
+  "Australien, New Zealand, Vietnam, Bali, Gili Islands & Lombok",
+  "Indien, Nepal, Thailand, Vietnam og Sri Lanka",
+  "Hawaii, Australien, Japan, Bali og Gili Islands",
+  "Maldiverne, Sri Lanka, Bali og Gili Islands",
+  "Brasilien, Bolivia, Colombia, Ecuador, Peru & Argentina",
+  "Australien, Japan, Bali og Gili Islands",
+  "Brasilien, Colombia, Costa Rica & Mexico",
+  "Bali, Lombok og Gili - Sommerhøjskole",
+  "Sydkorea & Japan - Sommerhøjskole",
+  "Japan - Sommerhøjskole",
+  "Brasilien, Ecuador & Amazonas - Sommerhøjskole",
+  "Brasilien, Argentina, Peru, Ecuador & Galapagos - Sommerhøjskole"
+];
 ---
 
 
 <Layout>
-    <h1>hejsa</h1>
-    
+    <section class="start">
+    <h1>Infomøder</h1>
+    <h2>MØD OS OG HØR MERE OM REJSERNE</h2>
+    </section>
+
+    <section class="info2">
+        <h1>INFOMØDER - HØJSKOLE I UDLANDET</h1>
+<h2>Hvis du drømmer om et fantastisk rejseeventyr med masser af adventure, vilde <br>
+     naturoplevelser, spændende kulturmøder og et stærkt højskole-fællesskab, så hop med på et <br>
+    af vores hyggelige online-infomøder.</h2>
+<h3>
+Vi præsenterer vores eventyrlige højskole og fortæller en masse om:</h3>
+ 
+<ul>
+   <li>Hvem er HÖJSKOLENDK</li>
+<li>Vores eventyrlige højskoleophold</li>
+  <li>Adventure, aktiviteter og alle de fede oplevelser der venter</li>
+  <li>En ”almindelig” dag på højskole i udlandet</li>
+  <li>Den levende og aktive måde vi underviser på (glem kedelige klasseværelser)</li>
+  <li>Økonomi, lommepenge, pakkeliste, friuger, afrejsemødet, etc.</li>
+</ul>
+Vi runder af med 'Rejsefeber Café', hvor du kan sludre med tidligere elever, rejseledere<br>
+ og ejerne - og selvfølgelig gi' den gas med alle de spørgsmål du har.
+
+Vi glæder os til at se dig!</p>
+
+<h4>Oversigt over infomøder:</h4>
+<img src="/public/imgs/info2.png" alt="">
+
+
+    </section>
+
+
+    <body>
+    <div class="form-wrapper">
+      <form method="POST">
+
+        <label for="info">Hvilket infomøde vil du deltage i? *</label>
+        <select id="info" name="info" required>
+          <option value="">Vælg infomøde</option>
+          <option>Online d. 06. januar 2026, klokken 18.30 - 20.00</option>
+          <option>Online d. 03. februar 2026, klokken 18.30 - 20.00</option>
+          <option>Online d. 17. marts 2026, klokken 18.30 - 20.00</option>
+          <option>Online d. 14. april 2026, klokken 18.30 - 20.00</option>
+          <option>Online d. 05. maj 2026, klokken 18.30 - 20.00</option>
+          <option>Online d. 09. juni 2026, klokken 18.30 - 20.00</option>
+        </select>
+
+        <div class="row">
+          <div>
+            <label for="fornavn">Fornavn*</label>
+            <input type="text" id="fornavn" name="fornavn" required />
+          </div>
+
+          <div>
+            <label for="efternavn">Efternavn*</label>
+            <input type="text" id="efternavn" name="efternavn" required />
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label for="telefon">Telefonnummer</label>
+            <input type="tel" id="telefon" name="telefon" />
+          </div>
+
+          <div>
+            <label for="email">E-mail*</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+        </div>
+
+        <label>Hvilke ophold er du interesseret i?*</label>
+        <div class="checkbox-group">
+          {destinations.map((destination) => (
+            <label>
+              <input type="checkbox" name="destinations" value={destination} />
+              {destination}
+            </label>
+          ))}
+        </div>
+
+        <section class="formslut">
+        <p>Acceptér betingelser</p>
+
+        <label>
+          <input type="checkbox"/>
+          Ved tilmelding giver du os tilladelse til at kontakte dig m. <br>
+           påmindelser og opfølgning.
+        </label>
+            
+<p>For at kunne tilmelde dig er vi nødt til at gemme og behandle dine <br>
+    personlige oplysninger. Hvis du samtykker til, at vi må gemme <br>
+    dine personlige oplysninger til dette formål, skal du sætte kryds i <br>
+    afkrydsningsfeltet nedenfor.</p>
+
+        
+        <label>
+          <input type="checkbox" required />
+          Jeg har læst jeres privatlivspolitik og generelle bestemmelser<br>
+          og er indforstået med begge.*
+        </label>
+
+       <Button title="Indsend" variant="insend" />
+       </section>
+
+      </form>
+    </div>
+  </body>
+
 </Layout>
